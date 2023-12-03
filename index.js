@@ -140,6 +140,8 @@ class Car {
     this.odometer = 0 // car initilizes with zero miles
     this.tank = tankSize // car initiazes full of gas
     // ✨ initialize whatever other properties are needed
+    this.currentGas = tankSize
+    this.mpg = mpg
   }
 
   /**
@@ -157,6 +159,17 @@ class Car {
    */
   drive(distance) {
     // ✨ implement
+    const maxMileage = this.currentGas * this.mpg;
+    if(maxMileage >= distance){
+      this.currentGas -= (distance / this.mpg)
+      this.odometer += distance
+      return this.odometer
+    } else {
+      const topMiles = this.currentGas * 30
+      this.odometer += topMiles
+      this.currentGas = 0
+      return this.odometer
+    }
   }
 
   /**
@@ -172,9 +185,15 @@ class Car {
    */
   refuel(gallons) {
     // ✨ implement
+    if((gallons + this.currentGas) >= this.tank){
+      this.currentGas = this.tank
+      return this.currentGas
+    } else {
+      this.currentGas += gallons
+      return this.currentGas
+    }
   }
 }
-
 /**
  * [Exercise 7] Asynchronously resolves whether a number is even
  * @param {number} number - the number to test for evenness

@@ -187,10 +187,10 @@ class Car {
     // ✨ implement
     if((gallons + this.currentGas) >= this.tank){
       this.currentGas = this.tank
-      return this.currentGas
+      return this.currentGas * this.mpg
     } else {
       this.currentGas += gallons
-      return this.currentGas
+      return this.currentGas * this.mpg
     }
   }
 }
@@ -209,6 +209,11 @@ class Car {
  */
 function isEvenNumberAsync(number) {
   // ✨ implement
+  if (number % 2 === 0){
+    return true
+  } else {
+    return false;
+  }
 }
 
 module.exports = {

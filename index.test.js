@@ -130,22 +130,24 @@ describe('[Exercise 6] Car', () => {
   test('[17] refueling allows to keep driving', () => {
     expect(focus.drive(800)).toBe(600)
     expect(focus.currentGas).toBe(0)
-    expect(focus.refuel(99)).toBe(20)
+    expect(focus.refuel(99)).toBe(600)
     expect(focus.drive(600)).toBe(1200)
   })
   test('[18] adding fuel to a full tank has no effect', () => {
-    expect(focus.refuel(99)).toBe(20)
-    expect(focus.refuel(1)).toBe(20)
+    expect(focus.refuel(99)).toBe(600)
+    expect(focus.refuel(1)).toBe(600)
     expect(focus.drive(600)).toBe(600)
     expect(focus.currentGas).toBe(0)
-    expect(focus.refuel(20)).toBe(20)
-    expect(focus.refuel(20)).toBe(20)
+    expect(focus.refuel(20)).toBe(600)
+    expect(focus.refuel(20)).toBe(600)
   })
 })
 
 describe('[Exercise 7] isEvenNumberAsync', () => {
   test('[19] resolves true if passed an even number', () => {
-    
+    expect(utils.isEvenNumberAsync(2)).toBe(true)
   })
-  // test('[20] resolves false if passed an odd number', () => {})
+  test('[20] resolves false if passed an odd number', () => {
+    expect(utils.isEvenNumberAsync(3)).toBe(false)
+  })
 })

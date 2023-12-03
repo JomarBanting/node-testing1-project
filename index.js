@@ -96,6 +96,10 @@ class Seasons {
    */
   constructor() {
     // ✨ initialize whatever properties are needed
+    this.seasons = [
+      "summer", "fall", "winter", "spring"
+    ]
+    this.counter = 0
   }
 
   /**
@@ -112,6 +116,16 @@ class Seasons {
    */
   next() {
     // ✨ implement
+    if (this.counter < 4){
+      const currentSeason = this.seasons[this.counter]
+      this.counter++
+      return currentSeason
+    } else {
+      this.counter = 0
+      const currentSeason = this.seasons[this.counter]
+      this.counter++
+      return currentSeason 
+    }
   }
 }
 

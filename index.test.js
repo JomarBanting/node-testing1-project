@@ -120,12 +120,12 @@ describe('[Exercise 6] Car', () => {
     expect(focus.drive(1)).toBe(600)
     expect(focus.drive(1)).toBe(600)
     expect(focus.drive(1)).toBe(600)
-    expect(focus.currentGas).toBe(0)
+    expect(focus.tank).toBe(0)
    })
 
   test('[17] refueling allows to keep driving', () => {
     expect(focus.drive(800)).toBe(600)
-    expect(focus.currentGas).toBe(0)
+    expect(focus.tank).toBe(0)
     expect(focus.refuel(99)).toBe(600)
     expect(focus.drive(600)).toBe(1200)
   })
@@ -133,7 +133,7 @@ describe('[Exercise 6] Car', () => {
     expect(focus.refuel(99)).toBe(600)
     expect(focus.refuel(1)).toBe(600)
     expect(focus.drive(600)).toBe(600)
-    expect(focus.currentGas).toBe(0)
+    expect(focus.tank).toBe(0)
     expect(focus.refuel(20)).toBe(600)
     expect(focus.refuel(20)).toBe(600)
   })

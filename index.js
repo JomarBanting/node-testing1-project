@@ -160,13 +160,12 @@ class Car {
   drive(distance) {
     // ✨ implement
     const maxMileage = this.currentGas * this.mpg;
-    if(maxMileage >= distance){
-      this.currentGas -= (distance / this.mpg)
+    if(distance <= maxMileage){
       this.odometer += distance
+      this.currentGas -= (distance / this.mpg)
       return this.odometer
     } else {
-      const topMiles = this.currentGas * 30
-      this.odometer += topMiles
+      this.odometer += maxMileage 
       this.currentGas = 0
       return this.odometer
     }

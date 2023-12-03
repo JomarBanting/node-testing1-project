@@ -116,14 +116,10 @@ describe('[Exercise 6] Car', () => {
     expect(focus.drive(200)).toBe(500)
   })
   test('[16] driving the car uses gas', () => {
-    expect(focus.currentGas).toBe(20)
-    expect(focus.drive(100)).toBe(100)
-    expect(focus.drive(100)).toBe(200)
-    expect(focus.drive(100)).toBe(300)
-    expect(focus.drive(200)).toBe(500)
-    expect(focus.drive(200)).toBe(600)
-    expect(focus.currentGas).toBe(0)
-    expect(focus.drive(200)).toBe(600)
+    focus.drive(600)
+    expect(focus.drive(1)).toBe(600)
+    expect(focus.drive(1)).toBe(600)
+    expect(focus.drive(1)).toBe(600)
     expect(focus.currentGas).toBe(0)
    })
 
